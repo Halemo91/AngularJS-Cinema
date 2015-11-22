@@ -119,7 +119,7 @@
         //u => saved user object
 
         // Update seats filled
-        // Show.update({showID: self.data.id}, self.seats);
+        Show.update({showID: self.data.id}, self.seats);
 
         // Load reserves view
         $location.path('/bookings/'+u.id);
