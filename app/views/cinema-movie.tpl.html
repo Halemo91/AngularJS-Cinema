@@ -1,0 +1,25 @@
+<div class="container" id="movie">
+  <div class="row">
+    <!-- info film -->
+  </div>
+  <div class="row">
+    <!-- info shows -->
+    <div class="info-movie">
+      <img src="{{movie.data.Poster}}" />
+      <h2>{{movie.data.Title}}</h2>
+      <p class="rating"><span class="fa fa-star fa-1x"></span>{{movie.data.imdbRating}}</p>
+    </div>
+    <h3>You can view the film in...</h3>
+    <p class="centered"><i class="fa fa-circle"></i><i class="fa fa-circle"></i><i class="fa fa-circle"></i></p>
+    <div class="info-rooms">
+      <div class="alert alert-info" role="alert" ng-repeat="item in movie.shows" ng-click="movie.viewShow(item)">
+
+          <strong>{{item.room.name}}</strong>
+          <br/>
+          <i class="fa fa-calendar"></i>{{ item.date}}
+
+      </div>
+    </div>
+
+  </div>
+</div>

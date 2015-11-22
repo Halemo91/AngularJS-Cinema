@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="ico/favicon.png">
+
+    <title>Your custom Cinema</title>
+    <base href="/">
+    <!-- build:css css/style.min.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="lib/fontawesome/css/font-awesome.css" />
+    <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+  </head>
+
+  <body data-spy="scroll" data-offset="0" data-target="#theMenu" ng-app="cinema">
+
+  <!-- Menu -->
+  <nav class="menu" id="theMenu">
+    <div class="menu-wrap">
+      <h1 class="logo"><a href="index.html#home">Minimal</a></h1>
+      <i class="icon-remove menu-close"></i>
+      <a href="#home" class="smoothScroll">Home</a>
+      <a href="#about" class="smoothScroll">About</a>
+      <a href="#portfolio" class="smoothScroll">Portfolio</a>
+      <a href="#contact" class="smoothScroll">Contact</a>
+      <a href="#"><i class="icon-facebook"></i></a>
+      <a href="#"><i class="icon-twitter"></i></a>
+      <a href="#"><i class="icon-dribbble"></i></a>
+      <a href="#"><i class="icon-envelope"></i></a>
+    </div>
+
+    <!-- Menu button -->
+    <div id="menuToggle"><i class="fa fa-bars"></i></div>
+  </nav>
+
+
+
+  <!-- ========== HEADER SECTION ========== -->
+  <section id="home" name="home"></section>
+  <div id="headerwrap">
+    <div class="container">
+      <div class="logo">
+        <i class="fa fa-ticket fa-5x"></i>
+      </div>
+      <br>
+      <div class="row">
+        <h1>CINEMA STORE</h1>
+        <br>
+        <h3>Hello, I'm CinemaBot. I will help you to buy your tickets.</h3>
+        <br>
+        <br>
+        <div class="col-lg-6 col-lg-offset-3">
+        </div>
+      </div>
+    </div><!-- /container -->
+  </div><!-- /headerwrap -->
+
+
+  <!-- ========== LOGIN SECTION ========== -->
+  <section id="about" name="about"></section>
+  <div id="f" ng-controller="LoginCtrl">
+    <div class="container">
+      <div class="row" ng-hide="logged">
+        <h3>Who are you?</h3>
+        <p class="centered">Type your NIF</p>
+        <p class="centered"><i class="fa fa-circle"></i><i class="fa fa-circle"></i><i class="fa fa-circle"></i></p>
+
+        <!-- INTRO INFORMATIO-->
+        <div class="col-lg-6 col-lg-offset-3">
+          <form ng-submit="login()">
+            <div class="form-group">
+              <input class="form-control input-lg text-center" ng-model="userID" type="text" />
+            </div>
+            <button type="submit" class="btn btn-warning">ENTER</button>
+          </form>
+        </div>
+      </div>
+      <div class="row" ng-show="logged">
+        <h3>Hello {{me.name}}</h3>
+        <p class="centered">How are you?</p>
+        <p class="centered"><i class="fa fa-circle"></i><i class="fa fa-circle"></i><i class="fa fa-circle"></i></p>
+      </div>
+    </div><!-- /container -->
+  </div><!-- /f -->
+
+  <!-- ========== ANGULAR SECTION ========== -->
+  <section id="angular"></section>
+  <div id="f" ng-view></div>
+
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact" name="contact"></section>
+  <div id="f">
+    <div class="container">
+      <div class="row">
+        <h3>CONTACT US</h3>
+        <p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i class="icon icon-circle"></i></p>
+
+        <div class="col-lg-6 col-lg-offset-3">
+          <p>Some Avenue, 987<br/>Madrid, Spain<br/>+34 8984-4343</p>
+          <p>iam@awesomemail.com</p>
+          <p><button type="button" class="btn btn-warning">YEAH! CONTACT ME NOW!</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- build:js js/vendor.min.js -->
+    <!-- bower:js -->
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js js/app.min.js -->
+    <!-- inject:js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/services.js"></script>
+    <script src="scripts/templates.js"></script>
+    <!-- endinject -->
+    <!-- endbuild -->
+</body>
+</html>

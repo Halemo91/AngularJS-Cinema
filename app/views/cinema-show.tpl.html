@@ -1,0 +1,38 @@
+<div class="container" id="show">
+  <div class="row">
+    <!-- info film -->
+    <div class="info-movie col-md-6">
+      <img src="{{show.movie.Poster}}" />
+      <h2>{{show.movie.Title}}</h2>
+      <p class="rating"><span class="fa fa-star fa-1x"></span>{{show.movie.imdbRating}}</p>
+    </div>
+    <div class="col-md-6">
+      <h2>{{show.room.name}}</h2>
+    </div>
+  </div>
+  <div class="row">
+
+    <h3>Seats</h3>
+    <p class="centered"><i class="fa fa-circle"></i><i class="fa fa-circle"></i><i class="fa fa-circle"></i></p>
+    <form id="seats" ng-submit="show.send()">
+
+      <div class="screen"></div>
+
+      <div class="form-group" ng-repeat="row in show.seats">
+        <span class="seat"
+              ng-class="{disabled: seat.desactivado, reserved: (seat.ocupado && !show.myseats[$parent.$index][$index].me), selected: show.myseats[$parent.$index][$index].me}"
+              ng-repeat="seat in row track by $index"
+              ng-click="( (seat.ocupado || seat.desactivado) && !show.myseats[$parent.$index][$index].me)  || changeStatus($parent.$index,$index)"
+              ng-disabled="seat.desactivado && seat.ocupado"
+              ng-model="seat">
+        </span>
+      </div>
+
+      <div class="form-group text-center">
+        <button class="btn btn-success btn-lg" type="submit">Buy</button>
+      </div>
+    </form>
+    <div class="col-lg-6 col-lg-offset-3">
+    </div>
+  </div>
+</div>

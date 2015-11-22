@@ -1,0 +1,30 @@
+<div class="content-fluid" id="movies">
+  <div class="row">
+    <h3>MOVIES</h3>
+    <p class="centered"><i class="fa fa-circle"></i><i class="fa fa-circle"></i><i class="fa fa-circle"></i></p>
+    <div class="items">
+      <div class="item col-md-3 col-sm-6" ng-repeat="movie in billboard.movies" style="background-image: url({{movie.Poster}});">
+        <a href="/movies/{{movie.imdbID}}"></a>
+        <h4>{{ movie.Title }}</h4>
+        <p class="info"><i class="fa fa-star"></i>{{movie.imdbRating}}</p>
+      </div>
+    </div>
+    <div class="col-lg-6 col-lg-offset-3">
+    </div>
+  </div>
+</div>
+<div class="content-fluid" id="rooms">
+  <div class="row">
+    <h3>Rooms</h3>
+    <p class="centered"><i class="fa fa-circle"></i><i class="fa fa-circle"></i><i class="fa fa-circle"></i></p>
+    <div class="items">
+      <div class="item col-md-3 col-sm-6" ng-repeat="room in billboard.rooms" style="background-image: url({{room.Poster}});">
+        <a href="/rooms/{{room.id}}"></a>
+        <h4>{{ room.name }}</h4>
+      </div>
+    </div>
+    <div class="col-lg-6 col-lg-offset-3">
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,16 @@
+<div class="container" id="booking">
+  <div class="row">
+    <!-- info film -->
+
+
+    <h3>Your tickets</h3>
+    <p class="centered"><i class="fa fa-circle"></i><i class="fa fa-circle"></i><i class="fa fa-circle"></i></p>
+    <h2>{{booking.movie.Title}}</h2>
+    <h4>{{booking.room.name}}</h4>
+    <div class="alert alert-success" role="alert" ng-repeat="seat in booking.seats">
+      <strong>Seat:</strong> {{seat}}
+    </div>
+    <div class="col-lg-6 col-lg-offset-3">
+    </div>
+  </div>
+</div>
